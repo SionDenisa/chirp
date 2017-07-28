@@ -1,66 +1,68 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="row">
-    <div class="col-xs-3"><br><br><br><br><br>
+    <div class="col-xs-3">
         <span class="glyphicon glyphicon-user profile-icon" aria-hidden="true"></span><br>
         <span>{{ object.first_name }} {{ object.last_name }}</span><br>
-        <span>@{{ object.username }}</span><br>
-        <span>{{ object.email }}</span>
+        <span class="num"><b> @{{ object.username }}</b></span><br>
+        <span style="margin-left:5px;" class="num"> {{ object.email }}</span><br>
         {% if request.user != object %}
         {% if object in following %}
-            <form method="post" action="{% url 'unfollow_user' object.username %}">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-primary follow">Unfollow</button>
-            </form>
+        <form method="post" action="{% url 'unfollow_user' object.username %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary follow">Unfollow</button>
+        </form>
         {% else %}
-            <form method="post" action="{% url 'follow_user' object.username %}">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-primary follow">Follow</button>
-            </form>
+        <form method="post" action="{% url 'follow_user' object.username %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary follow">Follow</button>
+        </form>
         {% endif %}
         {% endif %}
     </div>
-    <div class="col-xs-9"><br><br><br><br><br>
+    <div class="col-xs-9">
+
         <ul class="nav nav-tabs">
             <li role="presentation" class="active"><a href="#chirps-tab" data-toggle="tab">Chirps</a></li>
             <li role="presentation"><a href="#following-tab" data-toggle="tab">Following</a></li>
             <li role="presentation"><a href="#followers-tab" data-toggle="tab">Followers</a></li>
         </ul>
-
         <div class="tab-content">
             <div class="tab-pane active" id="chirps-tab">
-        {% for message in chirps %}
-        <div class="row chirp">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <p>
-                        {% if user == message.user %}
-                        <span class="label label-primary username">@{{ message.user.username }}</span>
-                        {% else %}
-                        <span class="label label-default username">@{{ message.user.username }}</span>
-                        {% endif %}
-                        <font><small>{{ message.created }}</small></font>
-                    </p>
-                    <p>{{ message }}</p>
-                </div>
-            </div>
-        </div>
 
-        {% endfor %}
+                {% for message in chirps %}
+                <div class="row chirp">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p>
+                                {% if user == message.user %}
+                                <span class="label label-primary username">@{{ message.user.username }}</span>
+                                {% else %}
+                                <span class="label label-default username">@{{ message.user.username }}</span>
+                                {% endif %}
+                                <small>{{ message.created }}</small>
+                            </p>
+                            <p>{{ message }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
             </div>
             <div class="tab-pane" id="following-tab">
                 {% for user in following %}
-                    {{user.username}}<br>
+                <font class="font">{{user.username}}</font><br>
                 {% endfor %}
             </div>
             <div class="tab-pane" id="followers-tab">
                 {% for user in followers %}
-                    {{user.username}}<br>
+                <font class="font">{{user.username}}</font><br>
                 {% endfor %}
             </div>
         </div>
 
 
     </div>
+
 </div>
 {% endblock %}

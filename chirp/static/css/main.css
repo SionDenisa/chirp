@@ -1,0 +1,121 @@
+h2 {
+    color: red;
+}
+
+/*.container[role=main] {
+margin: 75px 0 0 0;}*/
+
+button{
+background-color: #5bd75b;
+border: none;
+color: white;
+text-align: center;
+font-weight: bold;
+border-radius: 4px;
+margin-top:1px;
+margin-left:10px;
+
+  }
+  h3 {
+    color:#b3b3b3;
+    margin-left:10px;
+}
+.register-form {
+
+    margin-top: 200px;
+    margin-bottom: 100px;
+    margin-left:25%;
+    margin-right:25%;
+
+}
+
+.chirp {
+    .margin: 10px 0;
+}
+
+.username {
+    font-size: 16px;
+}
+
+.row-container {
+margin-top: 100px;
+}
+
+.error-field {
+    border-color: red;
+}
+label,input{
+
+ margin-left:7%;
+ margin-right:7%;
+}
+#header-form,#header-login{
+
+background-color:#f2f2f2;
+border-style:solid;
+border-color:#e6e6e6;
+border-width: 1px;
+border-radius: 2px;
+margin-bottom:10px;
+}
+#all-form,#login-pg{
+
+background-color:white;
+border-style:solid;
+border-color:#e6e6e6;
+border-width: 1px;
+border-radius: 5px;
+}
+input{
+
+float:right;
+border-radius:2px;
+border:1px solid;
+border-color:#e6e6e6;
+ width: 200px;
+
+}
+.pull-right{
+padding-top:5px;
+}
+#l{
+margin-right:10px;
+}
+
+.btn{
+ margin-left:460px;
+ padding:5px;
+ margin-bottom:10px;
+}
+
+a.btn.btn-primary{
+margin-left:5px;
+}
+
+.profile-icon {
+    padding: 20px;
+    border: 1px solid #383838;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    margin-left:10px;
+}
+.follow {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  }
+
+button.btn.btn-primary.follow{
+margin-left:10px;
+
+}
+.col-xs-3,.col-xs-9{
+margin-top:100px;
+}
+.f{
+padding:3%;
+}
+#num{
+margin-left:10px;
+}

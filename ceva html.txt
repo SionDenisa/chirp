@@ -1,0 +1,27 @@
+button.btn.btn-primary.follow{
+margin-left:5px;
+float:left;
+}
+input#id_status{
+float:left;
+margin-left:5px;
+margin-right:5px;
+border-radius: 2px;
+    border: 1px solid;
+    border-color: #e6e6e6;
+    width: 200px;
+}
+label#sts{
+float:left;
+margin-right:5px;
+}
+
+
+
+(function () {
+'use strict';
+$(document).ready(function () {
+
+});
+});
+})();
