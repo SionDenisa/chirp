@@ -1,0 +1,128 @@
+/*.container[role=main]{
+    margin:75px 0 0 0;
+}*/
+.register-form{
+    margin-left:15%;
+    margin-right:15%;
+}
+
+input{
+    float:right;
+    width:220px;
+    height:30px;
+    border-radius:4px;
+    border:1px solid;
+    border-color: rgb(238, 238, 238);
+
+}
+
+.pull-right{
+    padding-top:5px;
+}
+
+#l{
+    margin-right:10px;
+}
+
+#register,#login{
+    float:right;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:14px;
+    border-radius: 4px;
+    padding: 10px 24px;
+    font-weight:bold;
+}
+#register:hover{
+    background-color:#458A45;
+}
+
+#login:hover{
+    background-color:#458A45;
+}
+
+.panel-success{
+    margin-top:100px;
+    margin-left:25%;
+    margin-right:25%;
+}
+
+.panel-heading{
+    font-color:white;
+    font-size:16px;
+}
+
+.chirp {
+    .margin: 10px 0;
+}
+
+.username {
+    font-size: 16px;
+}
+
+.row-container {
+    margin-top: 100px;
+}
+
+.error-field {
+    border-color: red;
+}
+
+font{
+    color: rgb(122, 122, 122);
+}
+
+.row-container{
+margin-left:150px;
+margin-right:150px;
+}
+
+.panel-body{
+background-color:rgb(248, 248, 248);
+}
+
+.profile-icon {
+    padding: 20px;
+    border: 1px solid #383838;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.follow {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+form.f{
+    /*padding:10px;
+    padding-left:750px;*/
+    padding:2px;
+}
+
+body{
+    background-image:url("http://www.dlomusicaltheatre.com/wp-content/uploads/2015/08/green-gradient-1920x1200-abstract-background-80-35608735.jpg");
+}
+
+input#id_status{
+    float:left;
+    margin-right:5px;
+    margin-left:530px;
+    margin-bottom:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

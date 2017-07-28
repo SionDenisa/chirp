@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row-container">
+    {% if request.user.is_authenticated %}
+    <form method="post" action="{% url 'chirp'%}" class="f">
+        {% csrf_token %}
+        <input type="hidden" name="user" value="{{request.user.id}}"/>
+        <input type="text" name="status" maxlength="140" required id="id_status" class="{% if form.status.errors %} error-field {% endif %}" placeholder="What's on your mind?"/>
+        {{form.status.errors}}
+        <button type="submit" class="btn btn-primary follow"><b>Chirp</b></button><br><br>
+    </form>
+    {% endif %}
+    {% for message in object_list %}
+
+    <div class="row chirp">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                    {% if user == message.user %}
+                    <span class="label label-primary username">@{{ message.user.username }}</span>
+                    {% else %}
+                    <span class="label label-default username">@{{ message.user.username }}</span>
+                    {% endif %}
+                    <font><small>{{ message.created }}</small></font>
+                </p>
+                <p>{{ message }}</p>
+                <button class="like-message" data-messageid="{{message.id}}" {% if request.user in message.like_users %} style="color:green"{% endif %}>
+                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                </button>
+                <button class="dislike-message" data-messageid="{{message.id}}" {% if request.user in message.dislike_users %} style="color:red"{% endif %}>
+                     <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="panel panel-success">
+    <div class="panel-heading"><b>Login</b></div>
+    <div class="panel-body">
+<form method="post" class="register-form">
+    {% csrf_token %}
+     {{ form.non_field_errors }}
+    <p>
+        <label for="id_username">Username:</label>
+        <input type="text" name="username" autofocus maxlength="254" required id="id_username" placeholder="Username"/>
+        {{ form.username.errors }}
+    </p>
+    <p>
+        <label for="id_password">Password:</label>
+        <input type="password" name="password" required id="id_password" placeholder="Password"/>
+        {{ form.password.errors }}
+    </p>
+    <br>
+    <button type="submit" id="login">Login</button>
+</form>
+{% endblock %}
